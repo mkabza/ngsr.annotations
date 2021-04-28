@@ -1,9 +1,15 @@
+# R package files
+inst/doc
+/doc/
+/Meta/
+
 # History files
 .Rhistory
 .Rapp.history
 
 # Session Data files
 .RData
+.RDS
 
 # User-specific files
 .Ruserdata
@@ -19,6 +25,7 @@
 
 # RStudio files
 .Rproj.user/
+*.Rproj
 
 # produced vignettes
 vignettes/*.html
@@ -30,6 +37,8 @@ vignettes/*.pdf
 # knitr and R markdown default cache directories
 *_cache/
 /cache/
+*_files/
+/files/
 
 # Temporary files created by R markdown
 *.utf8.md
