@@ -5,9 +5,9 @@ Authors@R:
     person(given = "Michal",
            family = "Kabza",
            role = c("aut", "cre"),
-           email = "mkabza@outlook.com"))
-Description: Helper functions for processing genome annotations
-License: GPL (>= 3)
+           email = "mkabza@outlook.com")
+Description: Helper functions for processing genome annotations.
+License: GPL (>= 3) + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
