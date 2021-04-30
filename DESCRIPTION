@@ -5,13 +5,22 @@ Authors@R:
     person(given = "Michal",
            family = "Kabza",
            role = c("aut", "cre"),
-           email = "mkabza@outlook.com"))
-Description: Helper functions for processing genome annotations
-License: GPL (>= 3)
+           email = "mkabza@outlook.com")
+Description: Helper functions for processing genome annotations.
+License: GPL (>= 3) + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
+Depends: R (>= 4.0.0)
+Imports: glue (>= 1.4.2),
+        assertthat (>= 0.2.1),
+        BiocGenerics (>= 0.36.0),
+        S4Vectors (>= 0.28.1),
+        AnnotationDbi (>= 1.52.0),
+        GenomeInfoDb (>= 1.26.2),
+        GenomicRanges (>= 1.42.0),
+        GenomicFeatures (>= 1.42.1)
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
