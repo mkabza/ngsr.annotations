@@ -62,3 +62,37 @@ prepare_reference_ensembl <- function(output_dir, fasta, gtf) {
 	# Return nothing
 	invisible()
 }
+
+#' Add files for kallisto RNA velocity analysis to the reference genome data directory 
+#'
+#' Adds files for kallisto RNA velocity analysis to the reference genome data directory.
+#' Creates a kallisto_rna_velocity/ subdirectory containing following files:
+#' \itemize{
+#'   \item cDNA_introns.fa - spliced transcripts and flanking intronic sequences
+#'   \item cDNA_tx_to_capture.txt - IDs of spliced transcripts
+#'   \item introns_tx_to_capture.txt - IDs of intronic sequences
+#'   \item tr2g.txt - a table matching spliced transcript and intronic sequence IDs to gene IDs
+#' }
+#'
+#' @param output_dir Reference genome data directory
+#' @export
+prepare_reference_kallisto_rna_velocity <- function(output_dir) {
+
+	# Check the arguments
+	invisible({
+		assertthat::assert_that(assertthat::is.string(output_dir))
+		assertthat::assert_that(file.exists(output_dir))
+		assertthat::assert_that(assertthat::is.writeable(output_dir))
+		assertthat::assert_that(file.exists(file.path(output_dir, "genome.fasta")))
+		assertthat::assert_that(file.exists(file.path(output_dir, "annotations.gtf")))
+	})
+
+	# Prepare kallisto RNA velocity analysis files
+	genome_seq <- Biostrings::readDNAStringSet(file.path(output_dir, "genome.fasta"), format = "fasta")
+	BUSpaRse::get_velocity_files(X = file.path(output_dir, "annotations.gtf"), L = 31, Genome = genome_seq,
+	                             out_path = file.path(output_dir, "kallisto_rna_velocity"),
+	                             isoform_action = "separate", gene_version = NULL, transcript_version = NULL)
+
+	# Return nothing
+	invisible()
+}
