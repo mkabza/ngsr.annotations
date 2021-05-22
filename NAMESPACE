@@ -3,3 +3,4 @@
 export(prepare_reference_ensembl)
 export(prepare_reference_kallisto_rna_velocity)
 export(txdb_to_gtf)
+importFrom(BSgenome,getSeq)

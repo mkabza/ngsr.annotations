@@ -16,6 +16,7 @@
 #' @param fasta A path or an URL to an Ensembl FASTA file contaning genome sequence
 #' @param gtf A path or an URL to an Ensembl GTF file contaning genome annotations
 #' @export
+#' @importFrom BSgenome getSeq
 prepare_reference_ensembl <- function(output_dir, fasta, gtf) {
 
 	# Check the arguments
